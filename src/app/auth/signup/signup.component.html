@@ -1,4 +1,19 @@
-<input #input/>
-<input #input/>
-<input #input/>
-<input #input/>
+<h3>Create an Account</h3>
+<form class="ui form" [formGroup]="authForm">
+  <div class="field">
+    <label for="">Username</label>
+    <input formControlName="username" #input />
+  </div>
+  {{ authForm.get("username").errors | json }}
+  <div class="field">
+    <label for="">Password</label>
+    <input formControlName="password" #input />
+  </div>
+  {{ authForm.get("password").errors | json }}
+  <div class="field">
+    <label for="">Password Confirmation</label>
+    <input formControlName="passwordConfirmation" #input />
+  </div>
+  {{ authForm.get("passwordConfirmation").errors | json }}
+  <button class="ui submit button primary">Submit</button>
+</form>
